@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import * as serviceWorker from "./serviceWorker";
 import "./index.css";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Header from "./components/Header";
@@ -9,12 +8,12 @@ import App from "./App";
 
 const routing = (
   <Router>
-    <React.StrictMode>
-      <Header />
-      <Switch>
-        <Route exact path="/" component={App} />
-      </Switch>
-      <Footer />
-    </React.StrictMode>
+    <Header />
+    <Switch>
+      <Route exact path="/" component={App} />
+    </Switch>
+    <Footer />
   </Router>
 );
+
+ReactDOM.render(routing, document.getElementById("root"));
