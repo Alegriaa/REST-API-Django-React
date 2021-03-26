@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'blog',
     'blog_api',
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
+    'users'
 
 ]
 
@@ -94,8 +95,13 @@ DATABASES = {
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
-    ]
+        'rest_framework.permissions.AllowAny',
+    ],
+    # default auth package
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+   
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
 
 }
 
@@ -143,3 +149,6 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000"
 
 ]
+
+# my custom user model
+AUTH_USER_MODEL = "users.NewUser"
