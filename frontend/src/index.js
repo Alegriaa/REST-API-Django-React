@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Register from "./components/Register";
 import Login from "./components/Login";
-// import Logout from "./components/Logout";
+import Logout from "./components/Logout";
 
 import App from "./App";
 
@@ -17,7 +17,7 @@ const routing = (
       <Route exact path="/" component={App} />
       <Route path="/register" component={Register} />
       <Route path="/login" component={Login} />
-      {/* <Route path="/logout" component={Logout} /> */}
+      <Route path="/logout" component={Logout} />
     </Switch>
     <Footer />
   </Router>
