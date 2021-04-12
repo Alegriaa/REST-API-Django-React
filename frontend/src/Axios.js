@@ -1,5 +1,9 @@
 import axios from 'axios';
 
+// JS library
+// used to fetch or save data making HTTP requests
+// has a promise-based HTTP client with an API
+
 
 const baseURL = 'http://127.0.0.1:8000/api/';
 
@@ -54,7 +58,7 @@ axiosInstance.interceptors.response.use(
 				// exp date in token is expressed in seconds, while now() returns milliseconds:
 				const now = Math.ceil(Date.now() / 1000);
 				console.log(tokenParts.exp);
-                
+
                 // response
 				if (tokenParts.exp > now) {
 					return axiosInstance
